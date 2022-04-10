@@ -1,8 +1,8 @@
-package main
+package bitwise
 
 import "math"
 
-func getInt8(buffer []byte) (n int8) {
+func GetInt8(buffer []byte) (n int8) {
 	nBytes := 1
 	_ = buffer[nBytes-1]
 	i := 0
@@ -13,7 +13,7 @@ func getInt8(buffer []byte) (n int8) {
 	return
 }
 
-func getInt16(buffer []byte) (n int16) {
+func GetInt16(buffer []byte) (n int16) {
 	nBytes := 2
 	_ = buffer[nBytes-1]
 	i := 0
@@ -24,7 +24,7 @@ func getInt16(buffer []byte) (n int16) {
 	return
 }
 
-func getInt32(buffer []byte) (n int32) {
+func GetInt32(buffer []byte) (n int32) {
 	nBytes := 4
 	_ = buffer[nBytes-1]
 	i := 0
@@ -35,7 +35,7 @@ func getInt32(buffer []byte) (n int32) {
 	return
 }
 
-func getInt64(buffer []byte) (n int64) {
+func GetInt64(buffer []byte) (n int64) {
 	nBytes := 8
 	_ = buffer[nBytes-1]
 	i := 0
@@ -46,7 +46,7 @@ func getInt64(buffer []byte) (n int64) {
 	return
 }
 
-func getUint8(buffer []byte) (n uint8) {
+func GetUint8(buffer []byte) (n uint8) {
 	nBytes := 1
 	_ = buffer[nBytes-1]
 	i := 0
@@ -57,7 +57,7 @@ func getUint8(buffer []byte) (n uint8) {
 	return
 }
 
-func getUint16(buffer []byte) (n uint16) {
+func GetUint16(buffer []byte) (n uint16) {
 	nBytes := 2
 	_ = buffer[nBytes-1]
 	i := 0
@@ -68,7 +68,7 @@ func getUint16(buffer []byte) (n uint16) {
 	return
 }
 
-func getUint32(buffer []byte) (n uint32) {
+func GetUint32(buffer []byte) (n uint32) {
 	nBytes := 4
 	_ = buffer[nBytes-1]
 	i := 0
@@ -79,7 +79,7 @@ func getUint32(buffer []byte) (n uint32) {
 	return
 }
 
-func getUint64(buffer []byte) (n uint64) {
+func GetUint64(buffer []byte) (n uint64) {
 	nBytes := 8
 	_ = buffer[nBytes-1]
 	i := 0
@@ -90,16 +90,16 @@ func getUint64(buffer []byte) (n uint64) {
 	return
 }
 
-func getFloat32(buffer []byte) float32 {
+func GetFloat32(buffer []byte) float32 {
 	_ = buffer[3]
-	n := getUint32(buffer)
+	n := GetUint32(buffer)
 
 	return math.Float32frombits(n)
 }
 
-func getFloat64(buffer []byte) float64 {
+func GetFloat64(buffer []byte) float64 {
 	_ = buffer[7]
-	n := getUint64(buffer)
+	n := GetUint64(buffer)
 
 	return math.Float64frombits(n)
 }
