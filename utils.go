@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 func getInt8(buffer []byte) (n int8) {
 	nBytes := 1
 	_ = buffer[nBytes-1]
@@ -86,4 +88,18 @@ func getUint64(buffer []byte) (n uint64) {
 		i++
 	}
 	return
+}
+
+func getFloat32(buffer []byte) float32 {
+	_ = buffer[3]
+	n := getUint32(buffer)
+
+	return math.Float32frombits(n)
+}
+
+func getFloat64(buffer []byte) float64 {
+	_ = buffer[7]
+	n := getUint64(buffer)
+
+	return math.Float64frombits(n)
 }
