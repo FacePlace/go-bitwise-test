@@ -9,6 +9,11 @@ func main() {
 	var z int32
 	var w int64
 
+	var x1 uint8
+	var y1 uint16
+	var z1 uint32
+	var w1 uint64
+
 	x = getInt8([]byte{84})
 	fmt.Println(x)
 	y = getInt16([]byte{84, 69})
@@ -17,5 +22,14 @@ func main() {
 	fmt.Println(z)
 	w = getInt64([]byte{84, 69, 83, 52, 54, 0, 0, 0})
 	fmt.Println(w)
+
+	x1 = getUint8([]byte{84})
+	fmt.Println(x1)
+	y1 = getUint16([]byte{84, 69})
+	fmt.Println(y1)
+	z1 = getUint32([]byte{84, 69, 83, 52})
+	fmt.Println(z1)
+	w1 = getUint64([]byte{84, 69, 83, 52, 54, 0, 0, 0})
+	fmt.Println(w1)
 
 }
