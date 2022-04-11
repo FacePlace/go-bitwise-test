@@ -43,3 +43,16 @@ func TestGetInt(t *testing.T) {
 	actual8 := GetUint64(sample)
 	assert.Equal(t, test8, actual8)
 }
+
+func TestGetFloat(t *testing.T) {
+	sample := []byte{84, 69, 83, 52, 54, 00, 00, 00}
+
+	var test1 float32 = 1.9676127749335137e-7
+	var test2 float64 = 1.1502149934e-312
+
+	actual1 := GetFloat32(sample)
+	assert.Equal(t, test1, actual1)
+
+	actual2 := GetFloat64(sample)
+	assert.Equal(t, test2, actual2)
+}
