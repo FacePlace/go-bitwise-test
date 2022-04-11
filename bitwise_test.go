@@ -2,6 +2,8 @@ package bitwise
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetInt(t *testing.T) {
@@ -18,42 +20,26 @@ func TestGetInt(t *testing.T) {
 	var test8 uint64 = 232806106452
 
 	actual1 := GetInt8(sample)
-	if test1 != actual1 {
-		t.Errorf("Expected int8 to be %v, got - %v", test1, actual1)
-	}
+	assert.Equal(t, test1, actual1)
 
 	actual2 := GetInt16(sample)
-	if test2 != actual2 {
-		t.Errorf("Expected int16 to be %v, got - %v", test2, actual2)
-	}
+	assert.Equal(t, test2, actual2)
 
 	actual3 := GetInt32(sample)
-	if test3 != actual3 {
-		t.Errorf("Expected int32 to be %v, got - %v", test3, actual3)
-	}
+	assert.Equal(t, test3, actual3)
 
 	actual4 := GetInt64(sample)
-	if test4 != actual4 {
-		t.Errorf("Expected int64 to be %v, got - %v", test4, actual4)
-	}
+	assert.Equal(t, test4, actual4)
 
 	actual5 := GetUint8(sample)
-	if test5 != actual5 {
-		t.Errorf("Expected uint8 to be %v, got - %v", test5, actual5)
-	}
+	assert.Equal(t, test5, actual5)
 
 	actual6 := GetUint16(sample)
-	if test6 != actual6 {
-		t.Errorf("Expected uint16 to be %v, got - %v", test6, actual6)
-	}
+	assert.Equal(t, test6, actual6)
 
 	actual7 := GetUint32(sample)
-	if test7 != actual7 {
-		t.Errorf("Expected uint32 to be %v, got - %v", test7, actual7)
-	}
+	assert.Equal(t, test7, actual7)
 
 	actual8 := GetUint64(sample)
-	if test8 != actual8 {
-		t.Errorf("Expected uint64 to be %v, got - %v", test8, actual8)
-	}
+	assert.Equal(t, test8, actual8)
 }
